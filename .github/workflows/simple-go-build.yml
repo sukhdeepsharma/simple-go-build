@@ -14,8 +14,7 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: '1.18'
-      - run: go env -w GO111MODULE=auto    
-      - run: go run -mod=mod hello-world.go
+  
       - uses: actions/cache@v3
         env:
           cache-name: go-cache
@@ -29,4 +28,5 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
             
- 
+      - run: go env -w GO111MODULE=auto    
+      - run: go run -mod=mod hello-world.go
