@@ -15,7 +15,6 @@ jobs:
         with:
           go-version: '1.18'
       - run: go env -w GO111MODULE=auto    
-      - run: go mod init example.com/hello
       - run: go run -mod=mod hello-world.go
       - uses: actions/cache@v3
         with:
